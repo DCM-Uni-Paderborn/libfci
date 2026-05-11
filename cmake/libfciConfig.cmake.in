@@ -1,0 +1,12 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+find_dependency(BLAS)
+find_dependency(LAPACK)
+
+if(@LIBFCI_USE_OPENMP@)
+  find_dependency(OpenMP COMPONENTS CXX)
+endif()
+
+include("${CMAKE_CURRENT_LIST_DIR}/libfciTargets.cmake")
