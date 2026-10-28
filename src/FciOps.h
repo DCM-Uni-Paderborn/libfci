@@ -92,7 +92,8 @@ struct FHamiltonianTerm2eHub : public FHamiltonianTerm {
 // orbital strings of the given spin projection (i.e., alpha or
 // beta strings)
 struct FSubstResult {
-  char k, l, sign; // k, l references, and sign shift obtained (+/- 1)
+  char k, l; // k, l references
+  signed char sign; // fermionic sign (+/- 1), also when plain char is unsigned
   FOrbPat
       Str; // orbital string K resulting from c^{sigma k} c_{sigma l} |I[sigma]>
   FAdr iStr; // address of string K
