@@ -19,5 +19,4 @@ cmake --build build
 cmake --install build
 ```
 
-OpenMP is enabled automatically when available. It can be disabled with
-`-DLIBFCI_USE_OPENMP=OFF`.
+OpenMP is enabled by default. It can be disabled with `-DLIBFCI_USE_OPENMP=OFF`.

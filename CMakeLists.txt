@@ -11,7 +11,7 @@ include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
 option(BUILD_SHARED_LIBS "Build shared libraries" OFF)
-option(LIBFCI_USE_OPENMP "Enable OpenMP parallel regions when available" ON)
+option(LIBFCI_USE_OPENMP "Enable OpenMP parallel regions" ON)
 
 if(NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE
@@ -52,7 +52,7 @@ set_target_properties(
              POSITION_INDEPENDENT_CODE ON)
 
 if(LIBFCI_USE_OPENMP)
-  find_package(OpenMP QUIET COMPONENTS CXX)
+  find_package(OpenMP REQUIRED COMPONENTS CXX)
   if(OpenMP_CXX_FOUND)
     target_link_libraries(fci PRIVATE OpenMP::OpenMP_CXX)
   endif()
